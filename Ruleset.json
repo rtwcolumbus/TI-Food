@@ -1,0 +1,136 @@
+{
+    "name": "FOOD",
+    "description": "FOOD Rules",
+    "rules": [
+        {
+            "id": "AS0015",
+            "action": "None",
+            "justification": "TranslationFile:  Not needed for Base App"
+        },
+        {
+            "id": "AS0016",
+            "action": "None",
+            "justification": "DataClassification:  Not needed for Base App"
+        },
+        {
+            "id": "AS0018",
+            "action": "None",
+            "justification": "API Procedure Removed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0051",
+            "action": "None",
+            "justification": "contextSensitiveHelpUrl:  Not needed for Base App"
+        },
+        {
+            "id": "AS0053",
+            "action": "None",
+            "justification": "Target (OnPrem):  Not needed for Base App"
+        },
+        {
+            "id": "AS0054",
+            "action": "None",
+            "justification": "Affixes Required:  Not needed for Base App"
+        },
+        {
+            "id": "AS0084",
+            "action": "None",
+            "justification": "ID Range:  Not needed for Base App"
+        },
+        {
+            "id": "AS0100",
+            "action": "None",
+            "justification": "Application' property:  Not needed for Base App"
+        },
+        {
+            "id": "AS0009",
+            "action": "Warning",
+            "justification": "Keys changed:  Renaming Keys"
+        },
+        {
+            "id": "AS0013",
+            "action": "Warning",
+            "justification": "Invalid Field No.:  Known issue, will fix"
+        },
+        {
+            "id": "AS0031",
+            "action": "Warning",
+            "justification": "Action Renamed or Removed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0032",
+            "action": "Warning",
+            "justification": "Control Renamed or Removed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0034",
+            "action": "Warning",
+            "justification": "Table Property Changed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0059",
+            "action": "Warning",
+            "justification": "Read-only Reserved Tables:  Not needed for Base App"
+        },
+        {
+            "id": "AS0061",
+            "action": "Warning",
+            "justification": "CompanyOpen Events:  These are likely Microsoft issues"
+        },
+        {
+            "id": "AS0062",
+            "action": "Warning",
+            "justification": "ApplicationArea:  Known issue, will fix"
+        },
+        {
+            "id": "AS0063",
+            "action": "Warning",
+            "justification": "Removing var Modifier in Events:  Not needed for Base App"
+        },
+        {
+            "id": "AS0069",
+            "action": "Warning",
+            "justification": "Enum Replaces Option:  Not needed for Base App"
+        },
+        {
+            "id": "AS0070",
+            "action": "Warning",
+            "justification": "Enum Replaces Option:  Not needed for Base App"
+        },
+        {
+            "id": "AS0077",
+            "action": "Warning",
+            "justification": "Adding a var modifier in events is not allowed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0078",
+            "action": "Warning",
+            "justification": "Adding or removing a var modifier in external procedures is not allowed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0088",
+            "action": "Warning",
+            "justification": "Object Deleted:  Not needed for Base App"
+        },
+        {
+            "id": "AS0089",
+            "action": "Warning",
+            "justification": "Object Deleted:  Not needed for Base App"
+        },
+        {
+            "id": "AS0090",
+            "action": "Warning",
+            "justification": "Object Renamed:  Not needed for Base App"
+        },
+        {
+            "id": "AS0093",
+            "action": "None",
+            "justification": "Entitlement in extension:  Not needed for Base App"
+        },
+        {
+            "id": "AS0102",
+            "action": "None",
+            "justification": "Cannot add a return value to a procedure:  Not needed for Base App"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "version":  "20.2.202207.0",
+    "obsoleteTagPattern":  "(\\d+)\\.(\\d+)|FOOD-\\d+",
+    "obsoleteTagPatternDescription":  "major.minor or FOOD-major"
+}

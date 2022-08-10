@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="CompanyInformation_RFCNo_Caption">
+          <DataField>CompanyInformation_RFCNo_Caption</DataField>
+        </Field>
+        <Field Name="CompanyInformation_RFCNo">
+          <DataField>CompanyInformation_RFCNo</DataField>
+        </Field>
+        <Field Name="CompanyInformation_SATPostalCode">
+          <DataField>CompanyInformation_SATPostalCode</DataField>
+        </Field>
+        <Field Name="FiscalRegimeCaption">
+          <DataField>FiscalRegimeCaption</DataField>
+        </Field>
+        <Field Name="CompanyInformation_SATTaxRegime">
+          <DataField>CompanyInformation_SATTaxRegime</DataField>
+        </Field>
+        <Field Name="CompanyInformation_SCTPermissionNumber">
+          <DataField>CompanyInformation_SCTPermissionNumber</DataField>
+        </Field>
+        <Field Name="TransferRFCNo">
+          <DataField>TransferRFCNo</DataField>
+        </Field>
+        <Field Name="FolioText">
+          <DataField>FolioText</DataField>
+        </Field>
+        <Field Name="CertificateSerialNo">
+          <DataField>CertificateSerialNo</DataField>
+        </Field>
+        <Field Name="DateTimeStamped">
+          <DataField>DateTimeStamped</DataField>
+        </Field>
+        <Field Name="InsurerName">
+          <DataField>InsurerName</DataField>
+        </Field>
+        <Field Name="InsurerPolicyNumber">
+          <DataField>InsurerPolicyNumber</DataField>
+        </Field>
+        <Field Name="StartDateTime">
+          <DataField>StartDateTime</DataField>
+        </Field>
+        <Field Name="FinishDateTime">
+          <DataField>FinishDateTime</DataField>
+        </Field>
+        <Field Name="TransitDistance">
+          <DataField>TransitDistance</DataField>
+        </Field>
+        <Field Name="LocationFromAddress">
+          <DataField>LocationFromAddress</DataField>
+        </Field>
+        <Field Name="LocationToAddress">
+          <DataField>LocationToAddress</DataField>
+        </Field>
+        <Field Name="IDUbicacionOrigen">
+          <DataField>IDUbicacionOrigen</DataField>
+        </Field>
+        <Field Name="IDUbicacionDestino">
+          <DataField>IDUbicacionDestino</DataField>
+        </Field>
+        <Field Name="VehicleLicencePlate">
+          <DataField>VehicleLicencePlate</DataField>
+        </Field>
+        <Field Name="SATFederalAutotransport">
+          <DataField>SATFederalAutotransport</DataField>
+        </Field>
+        <Field Name="VehicleYear">
+          <DataField>VehicleYear</DataField>
+        </Field>
+        <Field Name="Trailer1LicencePlate">
+          <DataField>Trailer1LicencePlate</DataField>
+        </Field>
+        <Field Name="Trailer1SATTrailerType">
+          <DataField>Trailer1SATTrailerType</DataField>
+        </Field>
+        <Field Name="Trailer2LicencePlate">
+          <DataField>Trailer2LicencePlate</DataField>
+        </Field>
+        <Field Name="Trailer2SATTrailerType">
+          <DataField>Trailer2SATTrailerType</DataField>
+        </Field>
+        <Field Name="FolioTextCaption">
+          <DataField>FolioTextCaption</DataField>
+        </Field>
+        <Field Name="SATTipoRelacion">
+          <DataField>SATTipoRelacion</DataField>
+        </Field>
+        <Field Name="SATFolioFiscal">
+          <DataField>SATFolioFiscal</DataField>
+        </Field>
+        <Field Name="TaxRegimeCaption">
+          <DataField>TaxRegimeCaption</DataField>
+        </Field>
+        <Field Name="DocumentFooter">
+          <DataField>DocumentFooter</DataField>
+        </Field>
+        <Field Name="ClientCartaPorteCaption">
+          <DataField>ClientCartaPorteCaption</DataField>
+        </Field>
+        <Field Name="UsoCFDICaption">
+          <DataField>UsoCFDICaption</DataField>
+        </Field>
+        <Field Name="UsoCFDText">
+          <DataField>UsoCFDText</DataField>
+        </Field>
+        <Field Name="TotalAmountText">
+          <DataField>TotalAmountText</DataField>
+        </Field>
+        <Field Name="OriginalStringBase64Text">
+          <DataField>OriginalStringBase64Text</DataField>
+        </Field>
+        <Field Name="DigitalSignatureBase64Text">
+          <DataField>DigitalSignatureBase64Text</DataField>
+        </Field>
+        <Field Name="DigitalSignaturePACBase64Text">
+          <DataField>DigitalSignaturePACBase64Text</DataField>
+        </Field>
+        <Field Name="Original_StringCaption">
+          <DataField>Original_StringCaption</DataField>
+        </Field>
+        <Field Name="Digital_StampCaptionSAT">
+          <DataField>Digital_StampCaptionSAT</DataField>
+        </Field>
+        <Field Name="Digital_StampCaption">
+          <DataField>Digital_StampCaption</DataField>
+        </Field>
+        <Field Name="Page_Caption">
+          <DataField>Page_Caption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="DocumentLine_No">
+          <DataField>DocumentLine_No</DataField>
+        </Field>
+        <Field Name="DocumentLine_LineNo">
+          <DataField>DocumentLine_LineNo</DataField>
+        </Field>
+        <Field Name="DocumentLine_Description">
+          <DataField>DocumentLine_Description</DataField>
+        </Field>
+        <Field Name="ItemSATClassificationCode">
+          <DataField>ItemSATClassificationCode</DataField>
+        </Field>
+        <Field Name="ItemSATClassificationDescription">
+          <DataField>ItemSATClassificationDescription</DataField>
+        </Field>
+        <Field Name="DocumentLine_UnitOfMeasure">
+          <DataField>DocumentLine_UnitOfMeasure</DataField>
+        </Field>
+        <Field Name="SATUOMDescription">
+          <DataField>SATUOMDescription</DataField>
+        </Field>
+        <Field Name="DocumentLine_Quantity">
+          <DataField>DocumentLine_Quantity</DataField>
+        </Field>
+        <Field Name="DocumentLine_QuantityFormat">
+          <DataField>DocumentLine_QuantityFormat</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="GrossWeightFormat">
+          <DataField>GrossWeightFormat</DataField>
+        </Field>
+        <Field Name="SATHazardousMaterial">
+          <DataField>SATHazardousMaterial</DataField>
+        </Field>
+        <Field Name="SATPackagingType">
+          <DataField>SATPackagingType</DataField>
+        </Field>
+        <Field Name="MaterialPeligroso">
+          <DataField>MaterialPeligroso</DataField>
+        </Field>
+        <Field Name="Item_DescriptionCaption">
+          <DataField>Item_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="UnitCaption">
+          <DataField>UnitCaption</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="Unit_PriceCaption">
+          <DataField>Unit_PriceCaption</DataField>
+        </Field>
+        <Field Name="Total_PriceCaption">
+          <DataField>Total_PriceCaption</DataField>
+        </Field>
+        <Field Name="Subtotal_Caption">
+          <DataField>Subtotal_Caption</DataField>
+        </Field>
+        <Field Name="Total_Caption">
+          <DataField>Total_Caption</DataField>
+        </Field>
+        <Field Name="OperatorCode">
+          <DataField>OperatorCode</DataField>
+        </Field>
+        <Field Name="OperatorRFC">
+          <DataField>OperatorRFC</DataField>
+        </Field>
+        <Field Name="OperatorLicense">
+          <DataField>OperatorLicense</DataField>
+        </Field>
+        <Field Name="OperatorName">
+          <DataField>OperatorName</DataField>
+        </Field>
+        <Field Name="QRCode">
+          <DataField>QRCode</DataField>
+        </Field>
+        <Field Name="QRCode_Number">
+          <DataField>QRCode_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

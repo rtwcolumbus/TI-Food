@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="VariantCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VariantCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VariantCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CostValueCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CostValueCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CostValueCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AuditTextCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AuditTextCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AuditTextCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemVariantItemNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemVariantItemNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemVariantItemNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemVariantDescCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemVariantDescCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemVariantDescCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ItemLoopNo">
+          <DataField>ItemLoopNo</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="ItemDesc">
+          <DataField>ItemDesc</DataField>
+        </Field>
+        <Field Name="ItemCostBasisCostValue">
+          <DataField>ItemCostBasisCostValue</DataField>
+        </Field>
+        <Field Name="ItemCostBasisCostValueFormat">
+          <DataField>ItemCostBasisCostValueFormat</DataField>
+        </Field>
+        <Field Name="ItemCostBasisAuditText">
+          <DataField>ItemCostBasisAuditText</DataField>
+        </Field>
+        <Field Name="ItemBody">
+          <DataField>ItemBody</DataField>
+        </Field>
+        <Field Name="ItemVariantItemNo">
+          <DataField>ItemVariantItemNo</DataField>
+        </Field>
+        <Field Name="ItemVariantCode">
+          <DataField>ItemVariantCode</DataField>
+        </Field>
+        <Field Name="ItemVariantDesc">
+          <DataField>ItemVariantDesc</DataField>
+        </Field>
+        <Field Name="ItemVariantItemCostBasisCostValue">
+          <DataField>ItemVariantItemCostBasisCostValue</DataField>
+        </Field>
+        <Field Name="ItemVariantItemCostBasisCostValueFormat">
+          <DataField>ItemVariantItemCostBasisCostValueFormat</DataField>
+        </Field>
+        <Field Name="ItemVariantItemCostBasisAuditText">
+          <DataField>ItemVariantItemCostBasisAuditText</DataField>
+        </Field>
+        <Field Name="ItemVariantBody">
+          <DataField>ItemVariantBody</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
