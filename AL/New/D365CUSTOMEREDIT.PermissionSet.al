@@ -1,0 +1,46 @@
+permissionset 37002056 "FOOD D365 CUSTOMER, EDIT"
+{
+    Access = Public;
+    Assignable = false;
+    Caption = 'Dynamics 365 Create customers (FOOD)';
+
+    Permissions = tabledata "Cost Basis" = RIMD,
+                  tabledata "Cost Basis Adjustment" = RIMD,
+                  tabledata "Cost Calculation Method" = RIMD,
+                  tabledata "Cust./Item Price/Disc. Group" = RIMD,
+                  tabledata "Customer Item Alternate" = RIMD,
+                  tabledata "Deduction Comment Line" = RIMD,
+                  tabledata "Deduction Line" = RIMD,
+                  tabledata "Deduction Resolution" = RIMD,
+                  tabledata "Delivery Driver" = RIMD,
+                  tabledata "Delivery Route" = RIMD,
+                  tabledata "Delivery Route Schedule" = RIMD,
+                  tabledata "Delivery Routing Matrix Line" = RIMD,
+                  tabledata "Delivery Trip" = RIMD,
+                  tabledata "Delivery Trip Order" = RIMD,
+                  tabledata "Delivery Trip Pick" = RIMD,
+                  tabledata "Delivery Trip Pick Line" = RIMD,
+                  tabledata "Delivery Truck" = RIMD,
+                  tabledata "Item Cost Basis" = RIMD,
+                  tabledata "Item Cost Conversion Factor" = RIMD,
+                  tabledata "Ledger Entry Comment Line" = RM,
+                  tabledata "N138 Delivery Trip" = RIMD,
+                  tabledata "N138 Delivery Trip History" = RIMD,
+                  tabledata "N138 Loading Dock" = RIMD,
+                  tabledata "N138 Posted Transport Cost" = RIMD,
+                  tabledata "N138 Trans. CC Template Line" = RIMD,
+                  tabledata "N138 Trans. Cost Comp Template" = RIMD,
+                  tabledata "N138 Transport Cost" = RIMD,
+                  tabledata "N138 Transport Cost Component" = RIMD,
+                  tabledata "N138 Transport Mgt. Setup" = RIMD,
+                  tabledata "Off-Invoice Allowance Header" = RIMD,
+                  tabledata "Off-Invoice Allowance Line" = RIMD,
+                  tabledata "Order Off-Invoice Allowance" = RIMD,
+                  tabledata "Pick Class" = RIMD,
+                  tabledata "Pick Container Header" = RIMD,
+                  tabledata "Pick Container Line" = RIMD,
+                  tabledata "Recurring Price Template" = RIMD,
+                  tabledata "Sales Contract" = RIMD,
+                  tabledata "Sales Contract History" = RIMD,
+                  tabledata "Sales Contract Line" = RIMD;
+}

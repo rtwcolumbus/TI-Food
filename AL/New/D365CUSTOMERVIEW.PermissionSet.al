@@ -1,0 +1,45 @@
+permissionset 37002057 "FOOD D365 CUSTOMER, VIEW"
+{
+    Access = Public;
+    Assignable = false;
+    Caption = 'Dynamics 365 View customers (FOOD)';
+
+    Permissions = tabledata "Cost Basis" = R,
+                  tabledata "Cost Basis Adjustment" = R,
+                  tabledata "Cost Calculation Method" = R,
+                  tabledata "Cust./Item Price/Disc. Group" = R,
+                  tabledata "Customer Item Alternate" = R,
+                  tabledata "Deduction Comment Line" = R,
+                  tabledata "Deduction Line" = R,
+                  tabledata "Deduction Resolution" = R,
+                  tabledata "Delivery Driver" = R,
+                  tabledata "Delivery Route" = R,
+                  tabledata "Delivery Route Schedule" = R,
+                  tabledata "Delivery Routing Matrix Line" = R,
+                  tabledata "Delivery Trip" = R,
+                  tabledata "Delivery Trip Order" = R,
+                  tabledata "Delivery Trip Pick" = R,
+                  tabledata "Delivery Trip Pick Line" = R,
+                  tabledata "Delivery Truck" = R,
+                  tabledata "Item Cost Basis" = R,
+                  tabledata "Item Cost Conversion Factor" = R,
+                  tabledata "N138 Delivery Trip" = R,
+                  tabledata "N138 Delivery Trip History" = R,
+                  tabledata "N138 Loading Dock" = R,
+                  tabledata "N138 Posted Transport Cost" = R,
+                  tabledata "N138 Trans. CC Template Line" = R,
+                  tabledata "N138 Trans. Cost Comp Template" = R,
+                  tabledata "N138 Transport Cost" = R,
+                  tabledata "N138 Transport Cost Component" = R,
+                  tabledata "N138 Transport Mgt. Setup" = R,
+                  tabledata "Off-Invoice Allowance Header" = R,
+                  tabledata "Off-Invoice Allowance Line" = R,
+                  tabledata "Order Off-Invoice Allowance" = R,
+                  tabledata "Pick Class" = R,
+                  tabledata "Pick Container Header" = R,
+                  tabledata "Pick Container Line" = R,
+                  tabledata "Recurring Price Template" = R,
+                  tabledata "Sales Contract" = R,
+                  tabledata "Sales Contract History" = R,
+                  tabledata "Sales Contract Line" = R;
+}

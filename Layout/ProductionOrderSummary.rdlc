@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ProdOrderSummaryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProdOrderSummaryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProdOrderSummaryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PAGENOCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PAGENOCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PAGENOCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProdOrderNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProdOrderNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProdOrderNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OutputCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>OutputCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OutputCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityExpectedCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityExpectedCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityExpectedCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="YieldCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>YieldCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>YieldCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UOMCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>UOMCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>UOMCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityProducedCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityProducedCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityProducedCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConsumptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ConsumptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ConsumptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VariantCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VariantCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VariantCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DescCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DescCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DescCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityConsumedCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityConsumedCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityConsumedCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VarianceCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VarianceCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VarianceCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CostCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CostCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CostCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityRequiredCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityRequiredCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityRequiredCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LaborCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LaborCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LaborCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ResourceNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ResourceNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ResourceNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ActualHrsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ActualHrsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ActualHrsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RequiredHrsCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RequiredHrsCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RequiredHrsCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MaterialCostCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>MaterialCostCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>MaterialCostCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotalCostCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TotalCostCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TotalCostCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OverheadCostCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>OverheadCostCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OverheadCostCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProdOrderLineVariantCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProdOrderLineVariantCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProdOrderLineVariantCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProdOrderLineDescCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProdOrderLineDescCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProdOrderLineDescCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProdOrderLineItemNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProdOrderLineItemNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProdOrderLineItemNoCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="ProdOrderRec">
+          <DataField>ProdOrderRec</DataField>
+        </Field>
+        <Field Name="ProdOrderNo">
+          <DataField>ProdOrderNo</DataField>
+        </Field>
+        <Field Name="ProdOrderBatchOrder">
+          <DataField>ProdOrderBatchOrder</DataField>
+        </Field>
+        <Field Name="ProdOrderLineVariantCode">
+          <DataField>ProdOrderLineVariantCode</DataField>
+        </Field>
+        <Field Name="ProdOrderLineDesc">
+          <DataField>ProdOrderLineDesc</DataField>
+        </Field>
+        <Field Name="ProdOrderLineQuantity">
+          <DataField>ProdOrderLineQuantity</DataField>
+        </Field>
+        <Field Name="ProdOrderLineQuantityFormat">
+          <DataField>ProdOrderLineQuantityFormat</DataField>
+        </Field>
+        <Field Name="ProdOrderLineFinishedQuantity">
+          <DataField>ProdOrderLineFinishedQuantity</DataField>
+        </Field>
+        <Field Name="ProdOrderLineFinishedQuantityFormat">
+          <DataField>ProdOrderLineFinishedQuantityFormat</DataField>
+        </Field>
+        <Field Name="ProdOrderLineItemNo">
+          <DataField>ProdOrderLineItemNo</DataField>
+        </Field>
+        <Field Name="ProdOrderLineUOMCode">
+          <DataField>ProdOrderLineUOMCode</DataField>
+        </Field>
+        <Field Name="OutputYield">
+          <DataField>OutputYield</DataField>
+        </Field>
+        <Field Name="OutputYieldFormat">
+          <DataField>OutputYieldFormat</DataField>
+        </Field>
+        <Field Name="ProdOrderLineRec">
+          <DataField>ProdOrderLineRec</DataField>
+        </Field>
+        <Field Name="ProdOrderLineHeader">
+          <DataField>ProdOrderLineHeader</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompItemNo">
+          <DataField>TempProdOrderCompItemNo</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompVariantCode">
+          <DataField>TempProdOrderCompVariantCode</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompDesc">
+          <DataField>TempProdOrderCompDesc</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompUOMCode">
+          <DataField>TempProdOrderCompUOMCode</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompQuantity">
+          <DataField>TempProdOrderCompQuantity</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompQuantityFormat">
+          <DataField>TempProdOrderCompQuantityFormat</DataField>
+        </Field>
+        <Field Name="ConsumptionVariance">
+          <DataField>ConsumptionVariance</DataField>
+        </Field>
+        <Field Name="ConsumptionVarianceFormat">
+          <DataField>ConsumptionVarianceFormat</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompDirectCostAmount">
+          <DataField>TempProdOrderCompDirectCostAmount</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompDirectCostAmountFormat">
+          <DataField>TempProdOrderCompDirectCostAmountFormat</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompExpectedQuantity">
+          <DataField>TempProdOrderCompExpectedQuantity</DataField>
+        </Field>
+        <Field Name="TempProdOrderCompExpectedQuantityFormat">
+          <DataField>TempProdOrderCompExpectedQuantityFormat</DataField>
+        </Field>
+        <Field Name="ConsumptionRec">
+          <DataField>ConsumptionRec</DataField>
+        </Field>
+        <Field Name="ConsumptionHeader">
+          <DataField>ConsumptionHeader</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

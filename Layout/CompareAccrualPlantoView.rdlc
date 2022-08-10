@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="CompareAccrualPlantoViewCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompareAccrualPlantoViewCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompareAccrualPlantoViewCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PAGENOCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PAGENOCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PAGENOCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="ShowViewText">
+          <DataField>ShowViewText</DataField>
+        </Field>
+        <Field Name="STRTypeNoName">
+          <DataField>STRTypeNoName</DataField>
+        </Field>
+        <Field Name="AccrualPlanHeader">
+          <DataField>AccrualPlanHeader</DataField>
+        </Field>
+        <Field Name="AccrualPlanRec">
+          <DataField>AccrualPlanRec</DataField>
+        </Field>
+        <Field Name="AccrualPlanGetItemViewText">
+          <DataField>AccrualPlanGetItemViewText</DataField>
+        </Field>
+        <Field Name="Text007">
+          <DataField>Text007</DataField>
+        </Field>
+        <Field Name="Text001">
+          <DataField>Text001</DataField>
+        </Field>
+        <Field Name="STRItemSelectionItemCode">
+          <DataField>STRItemSelectionItemCode</DataField>
+        </Field>
+        <Field Name="AccrualPlanLineHeader">
+          <DataField>AccrualPlanLineHeader</DataField>
+        </Field>
+        <Field Name="AccrualPlanLineRec">
+          <DataField>AccrualPlanLineRec</DataField>
+        </Field>
+        <Field Name="AccrualPlanLineItemSelection">
+          <DataField>AccrualPlanLineItemSelection</DataField>
+        </Field>
+        <Field Name="PlanItemNo">
+          <DataField>PlanItemNo</DataField>
+        </Field>
+        <Field Name="PlanItemDesc">
+          <DataField>PlanItemDesc</DataField>
+        </Field>
+        <Field Name="PlanItemRec">
+          <DataField>PlanItemRec</DataField>
+        </Field>
+        <Field Name="Text002">
+          <DataField>Text002</DataField>
+        </Field>
+        <Field Name="ItemViewNo">
+          <DataField>ItemViewNo</DataField>
+        </Field>
+        <Field Name="ItemViewDesc">
+          <DataField>ItemViewDesc</DataField>
+        </Field>
+        <Field Name="ItemInViewRec">
+          <DataField>ItemInViewRec</DataField>
+        </Field>
+        <Field Name="ItemInViewHeader">
+          <DataField>ItemInViewHeader</DataField>
+        </Field>
+        <Field Name="SalesAccrualPlanGetSourceViewText">
+          <DataField>SalesAccrualPlanGetSourceViewText</DataField>
+        </Field>
+        <Field Name="Text008">
+          <DataField>Text008</DataField>
+        </Field>
+        <Field Name="Text003">
+          <DataField>Text003</DataField>
+        </Field>
+        <Field Name="SalesSTRSourceSelectionSourceCode">
+          <DataField>SalesSTRSourceSelectionSourceCode</DataField>
+        </Field>
+        <Field Name="SalesAccrualSourceLineRec">
+          <DataField>SalesAccrualSourceLineRec</DataField>
+        </Field>
+        <Field Name="SalesAccrualSourceLineHeader">
+          <DataField>SalesAccrualSourceLineHeader</DataField>
+        </Field>
+        <Field Name="SalesAccrualSourceLineSourceSelection">
+          <DataField>SalesAccrualSourceLineSourceSelection</DataField>
+        </Field>
+        <Field Name="PlanCustNo">
+          <DataField>PlanCustNo</DataField>
+        </Field>
+        <Field Name="PlanCustName">
+          <DataField>PlanCustName</DataField>
+        </Field>
+        <Field Name="PlanCustRec">
+          <DataField>PlanCustRec</DataField>
+        </Field>
+        <Field Name="Text004">
+          <DataField>Text004</DataField>
+        </Field>
+        <Field Name="CustViewNo">
+          <DataField>CustViewNo</DataField>
+        </Field>
+        <Field Name="CustViewName">
+          <DataField>CustViewName</DataField>
+        </Field>
+        <Field Name="CustInViewRec">
+          <DataField>CustInViewRec</DataField>
+        </Field>
+        <Field Name="CustInViewHeader">
+          <DataField>CustInViewHeader</DataField>
+        </Field>
+        <Field Name="PurchAccrualPlanGetSourceViewText">
+          <DataField>PurchAccrualPlanGetSourceViewText</DataField>
+        </Field>
+        <Field Name="Text009">
+          <DataField>Text009</DataField>
+        </Field>
+        <Field Name="Text005">
+          <DataField>Text005</DataField>
+        </Field>
+        <Field Name="PurchSTRSourceSelectionSourceCode">
+          <DataField>PurchSTRSourceSelectionSourceCode</DataField>
+        </Field>
+        <Field Name="PurchAccrualSourceLineHeader">
+          <DataField>PurchAccrualSourceLineHeader</DataField>
+        </Field>
+        <Field Name="PurchAccrualSourceLineRec">
+          <DataField>PurchAccrualSourceLineRec</DataField>
+        </Field>
+        <Field Name="PurchAccrualSourceLineSourceSelection">
+          <DataField>PurchAccrualSourceLineSourceSelection</DataField>
+        </Field>
+        <Field Name="PlanVendorNo">
+          <DataField>PlanVendorNo</DataField>
+        </Field>
+        <Field Name="PlanVendorName">
+          <DataField>PlanVendorName</DataField>
+        </Field>
+        <Field Name="PlanVendorRec">
+          <DataField>PlanVendorRec</DataField>
+        </Field>
+        <Field Name="VendorViewNo">
+          <DataField>VendorViewNo</DataField>
+        </Field>
+        <Field Name="VendorViewName">
+          <DataField>VendorViewName</DataField>
+        </Field>
+        <Field Name="VendorInViewHeader">
+          <DataField>VendorInViewHeader</DataField>
+        </Field>
+        <Field Name="VendorInViewRec">
+          <DataField>VendorInViewRec</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

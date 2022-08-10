@@ -1,0 +1,191 @@
+page 9047 "Machine Operator Activities"
+{
+    // PRW16.00.06
+    // P8001082, Columbus IT, Jack Reynolds, 09 JAN 13
+    //   Support for pre-process
+    // 
+    // PRW17.00.01
+    // P8001153, Columbus IT, Jack Reynolds, 15 MAY 13
+    //   Set DrillDownPageID for pre-process controls
+
+    Caption = 'Activities';
+    PageType = CardPart;
+    RefreshOnActivate = true;
+    SourceTable = "Manufacturing Cue";
+
+    layout
+    {
+        area(content)
+        {
+            cuegroup("Production Orders")
+            {
+                Caption = 'Production Orders';
+                field("Released Prod. Orders - All"; "Released Prod. Orders - All")
+                {
+                    ApplicationArea = Manufacturing;
+                    DrillDownPageID = "Released Production Orders";
+                    ToolTip = 'Specifies the number of released production orders that are displayed in the Manufacturing Cue on the Role Center. The documents are filtered by today''s date.';
+                }
+                field("Rlsd. Prod. Orders Until Today"; "Rlsd. Prod. Orders Until Today")
+                {
+                    ApplicationArea = Manufacturing;
+                    Caption = 'Released Prod. Orders Until Today';
+                    DrillDownPageID = "Released Production Orders";
+                    ToolTip = 'Specifies the number of released production orders that are displayed in the Manufacturing Cue on the Role Center. The documents are filtered by today''s date.';
+                }
+                field("Pre-Process Activities - All"; "Pre-Process Activities - All")
+                {
+                    ApplicationArea = FOODBasic;
+                    DrillDownPageID = "Pre-Process Activity List";
+                }
+                field("Pre-Process Activities - Today"; "Pre-Process Activities - Today")
+                {
+                    ApplicationArea = FOODBasic;
+                    DrillDownPageID = "Pre-Process Activity List";
+                }
+
+                actions
+                {
+                    action("Consumption Journal")
+                    {
+                        ApplicationArea = Manufacturing;
+                        Caption = 'Consumption Journal';
+                        RunObject = Page "Consumption Journal";
+                        ToolTip = 'Post the consumption of material as operations are performed.';
+                    }
+                    action("Output Journal")
+                    {
+                        ApplicationArea = Manufacturing;
+                        Caption = 'Output Journal';
+                        RunObject = Page "Output Journal";
+                        ToolTip = 'Post finished end items and time spent in production. ';
+                    }
+                }
+            }
+            cuegroup(Operations)
+            {
+                Caption = 'Operations';
+                field("Prod. Orders Routings-in Queue"; "Prod. Orders Routings-in Queue")
+                {
+                    ApplicationArea = Manufacturing;
+                    DrillDownPageID = "Prod. Order Routing";
+                    ToolTip = 'Specifies how many production order routing lines are in queue. The documents are filtered by today''s date. Finished production orders are excluded.';
+                }
+                field("Prod. Orders Routings-in Prog."; "Prod. Orders Routings-in Prog.")
+                {
+                    ApplicationArea = Manufacturing;
+                    DrillDownPageID = "Prod. Order Routing";
+                    ToolTip = 'Specifies how many production order routing lines are in progress. The documents are filtered by today''s date. Only released production orders are included.';
+                }
+
+                actions
+                {
+                    action("Register Absence - Machine Center")
+                    {
+                        ApplicationArea = Manufacturing;
+                        Caption = 'Register Absence - Machine Center';
+                        RunObject = Report "Reg. Abs. (from Machine Ctr.)";
+                        ToolTip = 'Register planned absences at a machine center. The planned absence can be registered for both human and machine resources. You can register changes in the available resources in the Registered Absence table. When the batch job has been completed, you can see the result in the Registered Absences window.';
+                    }
+                    action("Register Absence - Work Center")
+                    {
+                        ApplicationArea = Manufacturing;
+                        Caption = 'Register Absence - Work Center';
+                        RunObject = Report "Reg. Abs. (from Work Center)";
+                        ToolTip = 'Register planned absences at a machine center. The planned absence can be registered for both human and machine resources. You can register changes in the available resources in the Registered Absence table. When the batch job has been completed, you can see the result in the Registered Absences window.';
+                    }
+                    action("Prod. Order - Job Card")
+                    {
+                        ApplicationArea = Manufacturing;
+                        Caption = 'Prod. Order - Job Card';
+                        RunObject = Report "Prod. Order - Job Card";
+                        ToolTip = 'View a list of the work in progress of a production order. Output, Scrapped Quantity and Production Lead Time are shown or printed depending on the operation.';
+                    }
+                }
+            }
+            cuegroup("Warehouse Documents")
+            {
+                Caption = 'Warehouse Documents';
+                field("Invt. Picks to Production"; "Invt. Picks to Production")
+                {
+                    ApplicationArea = Warehouse;
+                    DrillDownPageID = "Inventory Picks";
+                    ToolTip = 'Specifies the number of inventory picks that are displayed in the Manufacturing Cue on the Role Center. The documents are filtered by today''s date.';
+                }
+                field("Invt. Put-aways from Prod."; "Invt. Put-aways from Prod.")
+                {
+                    ApplicationArea = Warehouse;
+                    DrillDownPageID = "Inventory Put-aways";
+                    ToolTip = 'Specifies the number of inventory put-always from production that are displayed in the Manufacturing Cue on the Role Center. The documents are filtered by today''s date.';
+                }
+
+                actions
+                {
+                    action("New Inventory Pick")
+                    {
+                        ApplicationArea = Warehouse;
+                        Caption = 'New Inventory Pick';
+                        RunObject = Page "Inventory Pick";
+                        RunPageMode = Create;
+                        ToolTip = 'Prepare to pick items in a basic warehouse configuration.';
+                    }
+                    action("New Inventory Put-away")
+                    {
+                        ApplicationArea = Warehouse;
+                        Caption = 'New Inventory Put-away';
+                        RunObject = Page "Inventory Put-away";
+                        RunPageMode = Create;
+                        ToolTip = 'Prepare to put items away in a basic warehouse configuration.';
+                    }
+                }
+            }
+            cuegroup("My User Tasks")
+            {
+                Caption = 'My User Tasks';
+                Visible = false;
+                ObsoleteState = Pending;
+                ObsoleteReason = 'Replaced with User Tasks Activities part';
+                ObsoleteTag = '17.0';
+                field("UserTaskManagement.GetMyPendingUserTasksCount"; UserTaskManagement.GetMyPendingUserTasksCount)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Pending User Tasks';
+                    Image = Checklist;
+                    ToolTip = 'Specifies the number of pending tasks that are assigned to you or to a group that you are a member of.';
+                    Visible = false;
+                    ObsoleteState = Pending;
+                    ObsoleteReason = 'Replaced with User Tasks Activities part';
+                    ObsoleteTag = '17.0';
+
+                    trigger OnDrillDown()
+                    var
+                        UserTaskList: Page "User Task List";
+                    begin
+                        UserTaskList.SetPageToShowMyPendingUserTasks;
+                        UserTaskList.Run;
+                    end;
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+
+    trigger OnOpenPage()
+    begin
+        Reset;
+        if not Get then begin
+            Init;
+            Insert;
+        end;
+
+        SetFilter("Date Filter", '<=%1', WorkDate);
+        SetRange("User ID Filter", UserId);
+    end;
+
+    var
+        UserTaskManagement: Codeunit "User Task Management";
+}
+

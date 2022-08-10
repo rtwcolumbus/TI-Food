@@ -1,0 +1,76 @@
+table 11069369 "N108 Pipeline Element"
+{
+    DataPerCompany = false;
+    ObsoleteState = Removed;
+
+    fields
+    {
+        field(1; "Source Type"; Integer)
+        {
+        }
+        field(2; "Source No."; Code[20])
+        {
+        }
+        field(6; "Code"; Code[20])
+        {
+        }
+        field(7; "Type Code"; Code[20])
+        {
+        }
+        field(10; Description; Text[250])
+        {
+        }
+        field(11; "Setup Table No."; Integer)
+        {
+        }
+        field(12; "Setup Table Name"; Text[30])
+        {
+        }
+        field(13; "Setup Page No."; Integer)
+        {
+        }
+        field(14; "Setup Page Name"; Text[30])
+        {
+        }
+        field(15; "Activity Class Name"; Text[100])
+        {
+        }
+        field(16; "Codeunit No."; Integer)
+        {
+        }
+        field(17; "Codeunit Name"; Text[30])
+        {
+        }
+        field(19; Type; Option)
+        {
+            OptionMembers = "Event",Activity,Endpoint;
+        }
+        field(20; "Config. Test Codeunit No."; Integer)
+        {
+        }
+        field(21; "Config. Test Codeunit Name"; Text[30])
+        {
+        }
+        field(22; "Xml Port No."; Integer)
+        {
+        }
+        field(23; "Xml Port Name"; Text[30])
+        {
+        }
+        field(24; Subtype; Option)
+        {
+            OptionMembers = " ",Reader,Writer,Periodic;
+        }
+        field(25; "Transaction Point"; Boolean)
+        {
+        }
+    }
+
+    keys
+    {
+        key(Key1; "Source Type", "Source No.", "Code")
+        {
+        }
+    }
+}
+
