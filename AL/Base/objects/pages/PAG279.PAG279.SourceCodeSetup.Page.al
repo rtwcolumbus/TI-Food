@@ -1,0 +1,589 @@
+page 279 "Source Code Setup"
+{
+    // PR3.70.08
+    // P8000140A, Myers Nissi, Jack Reynolds, 19 NOV 04
+    //   Add controls for container journal source code
+    // 
+    // P8000170A, Myers Nissi, Jack Reynolds, 31 JAN 05
+    //   Deduction Management
+    // 
+    // PR3.70.10
+    // P8000241A, Myers Nissi, Jack Reynolds, 29 AUG 05
+    //   Accrual enhancements
+    // 
+    // PR4.00.04
+    // P8000333A, VerticalSoft, Jack Reynolds, 30 AUG 06
+    //   Add tab page and controls for maintenace source code fields
+    // 
+    // PR4.00.06
+    // P8000496A, VerticalSoft, Jack Reynolds, 23 JUL 07
+    //   Add control for repack order (Inventory tab)
+    // 
+    // PRW16.00.01
+    // P8000719, VerticalSoft, Jack Reynolds, 10 AUG 09
+    //   Add controls for Maintenance Journal
+    // 
+    // PRW16.00.04
+    // P8000856, VerticalSoft, Don Bresee, 24 AUG 10
+    //   Add Commodity Class Costing granule
+    // 
+    // P8000891, VerticalSoft, Don Bresee, 04 JAN 11
+    //   Add Commodity Receiving logic
+    // 
+    // PRW16.00.06
+    // P8001009, Columbus IT, Jack Reynolds, 03 JAN 12
+    //   Update Control IDs
+    // 
+    // PRW110.0.02
+    // P80039017, To-Increase, Jack Reynolds, 31 JUL 17
+    //   Source Code for NAV Anywhere
+    //
+    // PRW119.03
+    // P800122712, To Increase, Gangabhushan, 25 MAY 22
+    //   Quality Control Samples
+
+    ApplicationArea = Basic, Suite;
+    Caption = 'Source Code Setup';
+    DeleteAllowed = false;
+    InsertAllowed = false;
+    PageType = Card;
+    SourceTable = "Source Code Setup";
+    UsageCategory = Administration;
+
+    layout
+    {
+        area(content)
+        {
+            group(General)
+            {
+                Caption = 'General';
+                field("General Journal"; Rec."General Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a general journal of the general type.';
+                }
+                field("IC General Journal"; Rec."IC General Journal")
+                {
+                    ApplicationArea = Intercompany;
+                    ToolTip = 'Specifies the code linked to entries that are posted from an intercompany general journal.';
+                }
+                field("Accrual Journal"; Rec."Accrual Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Scheduled Accrual Journal"; Rec."Scheduled Accrual Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Close Income Statement"; Rec."Close Income Statement")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted when you run the Close Income Statement batch job.';
+                }
+                field("VAT Settlement"; Rec."VAT Settlement")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Calc. and Post VAT Settlement batch job.';
+                }
+                field("Exchange Rate Adjmt."; Rec."Exchange Rate Adjmt.")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted when you run the Adjust Exchange Rates batch job.';
+                }
+                field("Deleted Document"; Rec."Deleted Document")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted in connection with the deletion of a document.';
+                }
+                field("Adjust Add. Reporting Currency"; Rec."Adjust Add. Reporting Currency")
+                {
+                    ApplicationArea = Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted when you change the additional reporting currency in the General Ledger Setup table.';
+                }
+                field(Reversal; Reversal)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from the Reverse Entries window.';
+                }
+                field("Compress G/L"; Rec."Compress G/L")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress General Ledger batch job.';
+                }
+                field("Compress VAT Entries"; Rec."Compress VAT Entries")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress VAT Entries batch job.';
+                }
+                field("Compress Bank Acc. Ledger"; Rec."Compress Bank Acc. Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Bank Acc. Ledger batch job.';
+                }
+                field("Compress Check Ledger"; Rec."Compress Check Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Delete Check Ledger Entries batch job.';
+                }
+                field("Financially Voided Check"; Rec."Financially Voided Check")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to check ledger entries with the entry status Financially Voided.';
+                }
+                field("Trans. Bank Rec. to Gen. Jnl."; Rec."Trans. Bank Rec. to Gen. Jnl.")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries posted after being transferred from a bank reconciliation by the Trans. Bank Rec. to Gen. Jnl. batch job.';
+                }
+                field("Bank Rec. Adjustment"; Rec."Bank Rec. Adjustment")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the source code that is assigned to entries that are posted from a bank record adjustment.';
+                }
+                field("Cash Flow Worksheet"; Rec."Cash Flow Worksheet")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the source code assigned to entries that are posted from the cash flow worksheet.';
+                }
+                field(Deposits; Deposits)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the source code that is assigned to entries that are posted from a deposit.';
+                    Visible = not BankDepositFeatureEnabled;
+                }
+                field("Payment Reconciliation Journal"; Rec."Payment Reconciliation Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a payment reconciliation journal.';
+                }
+                field(Consolidation; Consolidation)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from Consolidation.';
+                }
+            }
+            group(Sales)
+            {
+                Caption = 'Sales';
+                field(Control14; Sales)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted in connection with sales, such as orders, invoices, and credit memos.';
+                }
+                field("Sales Journal"; Rec."Sales Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries posted from a general journal of the sales type.';
+                }
+                field("Cash Receipt Journal"; Rec."Cash Receipt Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a general journal of the cash receipts type.';
+                }
+                field("Sales Entry Application"; Rec."Sales Entry Application")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from the Apply Customer Entries window.';
+                }
+                field("Unapplied Sales Entry Appln."; Rec."Unapplied Sales Entry Appln.")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from the Unapply Customer Entries window.';
+                }
+                field("Deduction Management"; Rec."Deduction Management")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field(Reminder; Reminder)
+                {
+                    ApplicationArea = Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a Reminder.';
+                }
+                field("Finance Charge Memo"; Rec."Finance Charge Memo")
+                {
+                    ApplicationArea = Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a Finance Charge Memo.';
+                }
+                field("Compress Cust. Ledger"; Rec."Compress Cust. Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Customer Ledger batch job.';
+                }
+            }
+            group(Purchases)
+            {
+                Caption = 'Purchases';
+                field(Control26; Purchases)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted in connection with purchases, such as orders, invoices, and credit memos.';
+                }
+                field("Purchase Journal"; Rec."Purchase Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a general journal of the purchase type.';
+                }
+                field("Payment Journal"; Rec."Payment Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a general journal of the payments type.';
+                }
+                field("Purchase Entry Application"; Rec."Purchase Entry Application")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from the Apply Vendor Entries window.';
+                }
+                field("Unapplied Purch. Entry Appln."; Rec."Unapplied Purch. Entry Appln.")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from the Unapply Vendor Entries window.';
+                }
+                field("Compress Vend. Ledger"; Rec."Compress Vend. Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Vendor Ledger batch job.';
+                }
+            }
+            group(Employees)
+            {
+                Caption = 'Employees';
+                field("Employee Entry Application"; Rec."Employee Entry Application")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from the Apply Employee Entries window.';
+                }
+                field("Unapplied Empl. Entry Appln."; Rec."Unapplied Empl. Entry Appln.")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from the Unapply Employee Entries window.';
+                }
+            }
+            group(Inventory)
+            {
+                Caption = 'Inventory';
+                field(Transfer; Transfer)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted in connection with transfer orders.';
+                }
+                field("Item Journal"; Rec."Item Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from an item journal.';
+                }
+                field("Item Reclass. Journal"; Rec."Item Reclass. Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the source code to use in item reclassification journals.';
+                }
+                field("Phys. Inventory Journal"; Rec."Phys. Inventory Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a Physical Inventory Journal.';
+                }
+                field("Phys. Invt. Orders"; Rec."Phys. Invt. Orders")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the source code to use in physical inventory orders.';
+                }
+                field("Revaluation Journal"; Rec."Revaluation Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a Revaluation Journal.';
+                }
+                field("Inventory Post Cost"; Rec."Inventory Post Cost")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted when you run the Post Inventory Cost to G/L batch job.';
+                }
+                field("Compress Item Ledger"; Rec."Compress Item Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Item Ledger batch job.';
+                }
+                field("Compress Item Budget"; Rec."Compress Item Budget")
+                {
+                    ApplicationArea = Suite;
+                    ToolTip = 'Specifies the code that is linked to the compressed item budget entries.';
+                }
+                field("Adjust Cost"; Rec."Adjust Cost")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are the result of a cost adjustment.';
+                }
+                field(Assembly; Assembly)
+                {
+                    ApplicationArea = Assembly;
+                    ToolTip = 'Specifies the code that is linked to entries that are posted with assembly orders.';
+                }
+                field("Invt. Receipt"; Rec."Invt. Receipt")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the number of the inventory receipt.';
+                }
+                field("Invt. Shipment"; Rec."Invt. Shipment")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the number of the inventory shipment.';
+                }
+                field("Container Journal"; Rec."Container Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                // P800122712
+                field("Quality Control Sample"; Rec."Quality Control Sample")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                // P800122712       
+                field("Repack Order"; "Repack Order")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Commodity Cost Adjustment"; Rec."Commodity Cost Adjustment")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Commodity Manifest"; Rec."Commodity Manifest")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+            }
+            group(Resources)
+            {
+                Caption = 'Resources';
+                field("Resource Journal"; Rec."Resource Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a Resource Journal.';
+                }
+                field("Compress Res. Ledger"; Rec."Compress Res. Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Resource Ledger batch job.';
+                }
+            }
+            group(Jobs)
+            {
+                Caption = 'Jobs';
+                field("Job Journal"; Rec."Job Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a job journal.';
+                }
+                field("Job G/L Journal"; Rec."Job G/L Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from a general journal of the Job G/L Journal type.';
+                }
+                field("Job G/L WIP"; Rec."Job G/L WIP")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from the Job Post WIP to G/L batch job in the Jobs module.';
+                }
+                field("Compress Job Ledger"; Rec."Compress Job Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Job Ledger batch job.';
+                }
+            }
+            group("Fixed Assets")
+            {
+                Caption = 'Fixed Assets';
+                field("Fixed Asset G/L Journal"; Rec."Fixed Asset G/L Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a fixed asset G/L journal.';
+                }
+                field("Fixed Asset Journal"; Rec."Fixed Asset Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a fixed asset journal.';
+                }
+                field("Insurance Journal"; Rec."Insurance Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from an insurance journal.';
+                }
+                field("Compress FA Ledger"; Rec."Compress FA Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress FA Ledger batch job.';
+                }
+                field("Compress Maintenance Ledger"; Rec."Compress Maintenance Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Maint. Ledger batch job.';
+                }
+                field("Compress Insurance Ledger"; Rec."Compress Insurance Ledger")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Insurance Ledger batch job.';
+                }
+            }
+            group(Manufacturing)
+            {
+                Caption = 'Manufacturing';
+                field("Consumption Journal"; Rec."Consumption Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a consumption journal.';
+                }
+                field("Output Journal"; Rec."Output Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from an output journal.';
+                }
+                field(Flushing; Flushing)
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to consumption entries that are posted when you change the status of a released production order to Finished.';
+                }
+                field("Capacity Journal"; Rec."Capacity Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from a capacity journal.';
+                }
+                field("Production Journal"; Rec."Production Journal")
+                {
+                    ApplicationArea = Manufacturing;
+                    ToolTip = 'Specifies the code that is linked to the entries that are posted from a production journal.';
+                }
+            }
+            group(Service)
+            {
+                Caption = 'Service';
+                field("Service Management"; Rec."Service Management")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted from the Service Management application area.';
+                }
+            }
+            group(Warehouse)
+            {
+                Caption = 'Warehouse';
+                field("Whse. Item Journal"; Rec."Whse. Item Journal")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse Item Journal.';
+                }
+                field("Whse. Reclassification Journal"; Rec."Whse. Reclassification Journal")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse Reclassification Journal.';
+                }
+                field("Whse. Phys. Invt. Journal"; Rec."Whse. Phys. Invt. Journal")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse Physical Inventory Journal.';
+                }
+                field("Whse. Put-away"; Rec."Whse. Put-away")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse Put-away.';
+                }
+                field("Whse. Pick"; Rec."Whse. Pick")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse Pick.';
+                }
+                field("Whse. Movement"; Rec."Whse. Movement")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code for the Warehouse movement.';
+                }
+                field("Compress Whse. Entries"; Rec."Compress Whse. Entries")
+                {
+                    ApplicationArea = Warehouse;
+                    ToolTip = 'Specifies the code linked to entries that are posted using the Date Compress Whse. Entries batch job.';
+                }
+            }
+            group("Cost Accounting")
+            {
+                Caption = 'Cost Accounting';
+                field("G/L Entry to CA"; Rec."G/L Entry to CA")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from transferring general ledger entries to cost entries.';
+                }
+                field("Cost Journal"; Rec."Cost Journal")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from a cost journal.';
+                }
+                field("Cost Allocation"; Rec."Cost Allocation")
+                {
+                    ApplicationArea = Basic, Suite;
+                    ToolTip = 'Specifies the code assigned to entries that are posted from cost allocations.';
+                }
+                field("Transfer Budget to Actual"; Rec."Transfer Budget to Actual")
+                {
+                    ApplicationArea = Suite;
+                    ToolTip = 'Specifies the code linked to entries that are posted by running the Transfer Budget to Actual batch job.';
+                }
+            }
+            group(Maintenance)
+            {
+                Caption = 'Maintenance';
+                field("Work Order"; Rec."Work Order")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Maintenance Labor Journal"; Rec."Maintenance Labor Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Maintenance Material Journal"; Rec."Maintenance Material Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Maintenance Contract Journal"; Rec."Maintenance Contract Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+                field("Maintenance Journal"; Rec."Maintenance Journal")
+                {
+                    ApplicationArea = FOODBasic;
+                }
+            }
+        }
+        area(factboxes)
+        {
+            systempart(Control1900383207; Links)
+            {
+                ApplicationArea = RecordLinks;
+                Visible = false;
+            }
+            systempart(Control1905767507; Notes)
+            {
+                ApplicationArea = Notes;
+                Visible = false;
+            }
+        }
+    }
+
+    actions
+    {
+    }
+
+    trigger OnOpenPage()
+#if not CLEAN21
+    var
+        BankDepositFeatureMgt: Codeunit "Bank Deposit Feature Mgt.";
+#endif
+    begin
+        Reset();
+        if not Get() then begin
+            Init();
+            Insert();
+        end;
+        BankDepositFeatureEnabled := true;
+#if not CLEAN21
+        BankDepositFeatureEnabled := BankDepositFeatureMgt.IsEnabled();
+#endif
+    end;
+
+    var
+        BankDepositFeatureEnabled: Boolean;
+}
+
